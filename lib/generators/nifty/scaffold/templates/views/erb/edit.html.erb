@@ -1,14 +1,16 @@
-<%% title "Edit <%= singular_name.titleize %>" %>
+<%% title t('<%= plural_name %>.edit') %>
 
-<%= render_form %>
+<h1><%%= yield :title %></h1>
 
 <%- if actions? :show, :index -%>
 <p>
 <%- if action? :show -%>
-  <%%= link_to "Show", <%= item_path :instance_variable => true %> %> |
+  <%%= link_to t('general.show'), <%= item_path :instance_variable => true %> %> |
 <%- end -%>
 <%- if action? :index -%>
-  <%%= link_to "View All", <%= items_path %> %>
+  <%%= link_to t('general.back'), <%= items_path %> %>
 <%- end -%>
 </p>
 <%- end -%>
+
+<%= render_form %>

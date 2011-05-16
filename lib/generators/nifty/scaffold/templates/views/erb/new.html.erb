@@ -1,7 +1,11 @@
-<%% title "New <%= singular_name.titleize %>" %>
+<%% title t('<%= plural_name %>.add') %>
+
+<h1><%%= yield :title %></h1>
+
+<%- if action? :index -%>
+<p><%%= link_to t('general.back'), <%= items_path %> %></p>
+<%- end -%>
 
 <%= render_form %>
 
-<%- if action? :index -%>
-<p><%%= link_to "Back to List", <%= items_path %> %></p>
-<%- end -%>
+

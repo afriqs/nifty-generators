@@ -1,10 +1,6 @@
-<%%= form_for <%= item_path :instance_variable => true %> do |f| %>
-  <%%= f.error_messages %>
+<%%= simple_form_for <%= item_path :instance_variable => true %> do |f| %>
 <%- for attribute in model_attributes -%>
-  <div class="field">
-    <%%= f.label :<%= attribute.name %> %>
-    <%%= f.<%= attribute.field_type %> :<%= attribute.name %> %>
-  </div>
+    <%%= f.input :<%= attribute.name %> %>
 <%- end -%>
-  <div class="actions"><%%= f.submit %></div>
+  <%%= f.button :submit %>
 <%% end %>

@@ -1,4 +1,10 @@
-<%% title "<%= plural_name.titleize %>" %>
+<%% title t('<%= plural_name %>.list') %>
+
+<h1><%%= yield :title %></h1>
+
+<%- if action? :new -%>
+<p><%%= link_to t('<%= plural_name %>.add'), <%= item_path :action => :new %> %></p>
+<%- end -%>
 
 <table>
   <tr>
@@ -12,18 +18,14 @@
       <td><%%= <%= instance_name %>.<%= attribute.name %> %></td>
     <%- end -%>
     <%- if action? :show -%>
-      <td><%%= link_to "Show", <%= item_path %> %></td>
+      <td><%%= link_to t('general.show'), <%= item_path %> %></td>
     <%- end -%>
     <%- if action? :edit -%>
-      <td><%%= link_to "Edit", <%= item_path :action => :edit %> %></td>
+      <td><%%= link_to t('general.edit'), <%= item_path :action => :edit %> %></td>
     <%- end -%>
     <%- if action? :destroy -%>
-      <td><%%= link_to "Destroy", <%= item_path %>, :confirm => 'Are you sure?', :method => :delete %></td>
+      <td><%%= link_to t('general.destroy'), <%= item_path %>, :confirm => t('general.confirm'), :method => :delete %></td>
     <%- end -%>
     </tr>
   <%% end %>
 </table>
-
-<%- if action? :new -%>
-<p><%%= link_to "New <%= singular_name.titleize %>", <%= item_path :action => :new %> %></p>
-<%- end -%>

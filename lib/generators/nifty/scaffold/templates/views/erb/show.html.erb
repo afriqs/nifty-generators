@@ -1,4 +1,19 @@
-<%% title "<%= singular_name.titleize %>" %>
+<%% title @<%= singular_name %>.title %>
+
+<h1><%%= yield :title %></h1>
+
+<p>
+<%- if action? :edit -%>
+  <%%= link_to t('general.edit'), <%= item_path :action => :edit, :instance_variable => true %> %> |
+<%- end -%>
+<%- if action? :destroy -%>
+  <%%= link_to t('general.destroy'), <%= item_path :instance_variable => true %>, :confirm => t('general.confirm'), :method => :delete %> |
+<%- end -%>
+<%- if action? :index -%>
+  <%%= link_to t('general.back'), <%= items_path %> %>
+<%- end -%>
+</p>
+
 
 <%- for attribute in model_attributes -%>
 <p>
@@ -6,15 +21,3 @@
   <%%= @<%= instance_name %>.<%= attribute.name %> %>
 </p>
 <%- end -%>
-
-<p>
-<%- if action? :edit -%>
-  <%%= link_to "Edit", <%= item_path :action => :edit, :instance_variable => true %> %> |
-<%- end -%>
-<%- if action? :destroy -%>
-  <%%= link_to "Destroy", <%= item_path :instance_variable => true %>, :confirm => 'Are you sure?', :method => :delete %> |
-<%- end -%>
-<%- if action? :index -%>
-  <%%= link_to "View All", <%= items_path %> %>
-<%- end -%>
-</p>
