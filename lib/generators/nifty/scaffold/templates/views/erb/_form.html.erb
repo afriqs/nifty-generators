@@ -1,6 +1,6 @@
 <%%= simple_form_for <%= item_path :instance_variable => true %> do |f| %>
 <%- for attribute in model_attributes -%>
-    <%%= f.input :<%= attribute.name %> %>
+	<%%= f.input :<%= attribute.name %> %>
 <%- end -%>
   <%%= f.button :submit %>
 <%% end %>
