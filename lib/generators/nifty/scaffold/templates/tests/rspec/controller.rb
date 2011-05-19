@@ -8,9 +8,5 @@ describe <%= plural_class_name %>Controller do
   
   context "as a guest" do
     it_should_require_admin_for_actions :index, :show, :new, :create, :edit, :update, :destroy
-      
-    end
   end
-  
-  # <%= controller_methods 'tests/rspec/actions' %>
 end
