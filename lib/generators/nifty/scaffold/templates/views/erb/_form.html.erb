@@ -1,4 +1,4 @@
-<%%= simple_form_for <%= item_path :instance_variable => true %> do |f| %>
+<%%= simple_form_for <%= item_path :instance_variable => true %>, :validate => true do |f| %>
 <%- for attribute in model_attributes -%>
 	<%%= f.input :<%= attribute.name %> %>
 <%- end -%>
