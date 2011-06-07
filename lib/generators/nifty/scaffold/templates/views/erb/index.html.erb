@@ -3,7 +3,7 @@
 <h1><%%= yield :title %></h1>
 
 <%- if action? :new -%>
-<p><%%= link_to t('<%= plural_name %>.add'), <%= item_path :action => :new %> %></p>
+<p><%%= link_to t('<%= plural_name %>.add'), <%= item_path :action => :new %>, :class => "admin_link" %></p>
 <%- end -%>
 
 <table>

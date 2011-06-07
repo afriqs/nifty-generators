@@ -5,10 +5,10 @@
 <%- if actions? :show, :index -%>
 <p>
 <%- if action? :show -%>
-  <%%= link_to t('general.show'), <%= item_path :instance_variable => true %> %> |
+  <%%= link_to t('general.show'), <%= item_path :instance_variable => true %>, :class => "admin_link" %>
 <%- end -%>
 <%- if action? :index -%>
-  <%%= link_to t('general.back'), <%= items_path %> %>
+  <%%= link_to t('general.back'), <%= items_path %>, :class => "admin_link" %>
 <%- end -%>
 </p>
 <%- end -%>

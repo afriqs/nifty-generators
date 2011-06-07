@@ -3,7 +3,7 @@
 <h1><%%= yield :title %></h1>
 
 <%- if action? :index -%>
-<p><%%= link_to t('general.back'), <%= items_path %> %></p>
+<p><%%= link_to t('general.back'), <%= items_path %>, :class => "admin_link" %></p>
 <%- end -%>
 
 <%= render_form %>

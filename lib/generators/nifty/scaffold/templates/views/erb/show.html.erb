@@ -4,10 +4,10 @@
 
 <p>
 <%- if action? :edit -%>
-  <%%= link_to t('general.edit'), <%= item_path :action => :edit, :instance_variable => true %> %> |
+  <%%= link_to t('general.edit'), <%= item_path :action => :edit, :instance_variable => true %>, :class => "admin_link" %>
 <%- end -%>
 <%- if action? :destroy -%>
-  <%%= link_to t('general.destroy'), <%= item_path :instance_variable => true %>, :confirm => t('general.confirm'), :method => :delete %> |
+  <%%= link_to t('general.destroy'), <%= item_path :instance_variable => true %>, :class => "admin_link", :confirm => t('general.confirm'), :method => :delete %>
 <%- end -%>
 <%- if action? :index -%>
   <%%= link_to t('general.back'), <%= items_path %> %>
