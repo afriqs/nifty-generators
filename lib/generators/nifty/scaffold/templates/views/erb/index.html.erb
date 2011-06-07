@@ -9,7 +9,7 @@
 <table>
   <tr>
   <%- for attribute in model_attributes -%>
-    <th><%%= t("'simple_form.labels.#{singular_name}.#{attribute.name}'") %></th>
+    <th><%%= t('simple_form.labels.<%= singular_name %>.<%= attribute.name %>') %></th>
   <%- end -%>
   </tr>
   <%% for <%= instance_name %> in @<%= instances_name %> %>
