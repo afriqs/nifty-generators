@@ -17,7 +17,7 @@
 
 <%- for attribute in model_attributes -%>
 <p>
-  <strong><%= attribute.human_name.titleize %>:</strong>
+  <span class="item"><%%= t('simple_form.labels.<%= singular_name %>.<%= attribute.name %>') %></span>
   <%%= @<%= instance_name %>.<%= attribute.name %> %>
 </p>
 <%- end -%>
